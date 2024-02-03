@@ -198,9 +198,9 @@ class BaseModel(nn.Module):
 
 class DetectionModel(BaseModel):
     # YOLOv5 detection model
-    def __init__(self, cfg="yolov5s.yaml", ch=3, nc=None, anchors=None):  # model, input channels, number of classes # 配置文件 config "yolov5s.yaml"
+    def __init__(self, cfg="yolov5s.yaml", ch=3, nc=None, anchors=None):  # model, input channels, number of classes # 配置文件 config "yolov5s.yaml", 输入通道数(rgb) ch=3, 类别数 nc
         super().__init__()
-        if isinstance(cfg, dict):
+        if isinstance(cfg, dict):  # is dict?
             self.yaml = cfg  # model dict
         else:  # is *.yaml
             import yaml  # for torch hub
